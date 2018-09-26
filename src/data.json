@@ -1,0 +1,86 @@
+{
+  "links": [
+    {
+      "title": "Trello",
+      "link": "https://trello.com/"
+    },
+    {
+      "title": "Telegram",
+      "link": "https://telegram.com/"
+    },
+    {
+      "title": "Time",
+      "link": "https://time.com/"
+    },
+    {
+      "title": "npm",
+      "link": "https://www.npmjs.com/"
+    },
+    {
+      "title": "GitHub",
+      "link": "https://github.com/"
+    },
+    {
+      "title": "Facebook",
+      "link": "https://web.facebook.com/"
+    },
+    {
+      "title": "Twitter",
+      "link": "https://twitter.com/"
+    },
+    {
+      "title": "Firebase",
+      "link": "https://firebase.google.com/"
+    },
+    {
+      "title": "Google",
+      "link": "https://google.com/"
+    },
+    {
+      "title": "Medium",
+      "link": "https://Medium.com/"
+    }
+  ],
+  "people": [
+    {
+      "name": "Jora Jura",
+      "email": "You@fanny.joy",
+      "icon": "four"
+    },
+    {
+      "name": "Youra",
+      "email": "covboy@west.com",
+      "icon": "two"
+    },
+    {
+      "name": "Sania",
+      "email": "Capitan@far.sea",
+      "icon": "one"
+    },
+    {
+      "name": "Someone",
+      "email": "yu@self.i",
+      "icon": "one"
+    },
+    {
+      "name": "Gerhard",
+      "email": "ger@berlin.de",
+      "icon": "one"
+    },
+    {
+      "name": "Kolia",
+      "email": "kalush@if.ua",
+      "icon": "four"
+    },
+    {
+      "name": "Zbyszek",
+      "email": "zbyszek@wa.pl",
+      "icon": "three"
+    },
+    {
+      "name": "Leon",
+      "email": "Leo@nig.com",
+      "icon": "five"
+    }
+  ]
+}

@@ -1,0 +1,456 @@
+body {
+  background-color: white;
+}
+html {
+  max-width: 1366px;
+  margin: 0 auto;
+}
+
+.header {
+  height: 70px;
+  border: 2px solid firebrick;
+  padding: 10px;
+}
+.title {
+  float: left;
+  margin: 10px;
+}
+.logo {
+  float: left;
+  margin: -5px 0 5px 1%;
+  border: 1px solid firebrick;
+  border-radius: 50%;
+  height: 55px;
+  width: 55px;
+}
+.logo > p {
+  text-align: center;
+  margin-top: 35%;
+}
+.search {
+  float: right;
+  margin: 10px 10px 10px 0;
+  height: 24px;
+}
+.searchInput {
+  width: 250px;
+}
+
+/* TABLE */
+.table_area {
+  width: 100%;
+  float: left;
+  margin-top: 30px;
+}
+.table {
+  border: 1px solid khaki;
+  width: 75%;
+  float: right;
+  margin-bottom: 25px;
+}
+.paginationArea {
+  width: 100%;
+  float: right;
+  min-height: 20px;
+}
+.paginationArea > ul {
+  list-style-type: none;
+  padding-left: 40%;
+}
+.paginationArea > ul > li {
+  display: block;
+  float: left;
+  margin-left: 18px;
+}
+.row {
+  width: 100%;
+}
+.col1 {
+  width: 70%;
+  padding-left: 30px;
+}
+.col2 {
+  width: 30%;
+  margin-right: 300px;
+}
+.createEditBookmarkTitle {
+  position: absolute;
+  margin-top: -4%;
+  padding-left: 3%;
+}
+.createBookmarkBtn {
+  margin-left: 25%;
+  color: green;
+  cursor: pointer;
+}
+.createEditBookmarkArea {
+  width: 100%;
+  min-height: 300px;
+  margin-top: 25px;
+}
+.createEditBookmark {
+  width: 45%;
+  min-height: 200px;
+  border: 1px solid darkblue;
+  float: right;
+  margin-top: 50px;
+  margin-right: 12%;
+}
+.createEditBookmarkLabel {
+  margin-left: 5%;
+}
+.createEditBookmarkForm {
+  width: 45%;
+}
+.createEditBookmarkFormItem {
+  margin: 20px;
+  margin-top: 0;
+  float: left;
+}
+.createEditBookmarkBtnCancel {
+  margin: 5px 0 0px 40px;
+  cursor: pointer;
+}
+.createEditBookmarkBtnSave {
+  margin: 5px 0 5px 0;
+  float: right;
+  cursor: pointer;
+}
+
+/* SETTINGS */
+
+.settings {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.settingsHeader {
+  width: 100%;
+  height: 80px;
+  padding: 0 auto;
+  border: 1px solid grey;
+}
+
+.settingsHeaderLeft {
+  width: 15%;
+  height: 80px;
+  border-right: 1px solid grey;
+  font-size: 20px;
+  float: left;
+}
+.settingsHeaderLeft > p {
+  vertical-align: middle;
+  text-align: center;
+}
+.settingsHeaderRigth {
+  width: 84%;
+  height: 99%;
+  float: left;
+}
+.settingsBody {
+  width: 100%;
+  height: 1350px;
+  border: 1px solid grey;
+  float: left;
+}
+
+.settingsBodyLeft {
+  width: 15%;
+  height: 99%;
+  border-right: 1px solid grey;
+  float: left;
+}
+.settingsBodyLeft_menu {
+  padding-left: 5%;
+}
+.settingsBodyLeft_menu > li {
+  list-style-type: none;
+}
+.settingsBodyLeft_menu > ul {
+  list-style-type: none;
+  margin-left: -10%;
+}
+.settingsBodyLeft_menuItem {
+  cursor: context-menu;
+}
+.pageNavigator {
+  position: fixed;
+  left: 6;
+  top: 145px;
+}
+
+.settingsBodyRigth {
+  width: 84%;
+  height: 99%;
+  float: left;
+}
+
+/* section PEOPLE */
+.peopleTitle {
+  width: 85%;
+  margin-top: 15px;
+  padding-left: 10%;
+  font-size: 18px;
+}
+.settingsBodyPeople {
+  width: 85%;
+  height: 240px;
+  border: 1px solid grey;
+  margin: 0 auto;
+  margin-top: 15px;
+  padding-top: 2%;
+}
+.peopleRenderUser {
+  width: 90%;
+  padding: 10px;
+  height: 110px;
+  margin: 0 auto;
+  background-color: #ecedf1;
+}
+.peopleUserAvatar {
+  float: left;
+  border: 1px solid grey;
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  margin-right: 15px;
+}
+.peopleUserInfo {
+  margin-top: 2%;
+  float: left;
+  width: 60%;
+  height: 100%;
+}
+.peopleUserInfoName {
+  font-size: 16px;
+}
+.peopleUserEdit {
+  float: left;
+  width: 7%;
+  height: 100%;
+  margin-left: 5%;
+}
+.peopleUserEdit > p {
+  color: green;
+  padding-top: 50%;
+  /* padding-bottom: 20%; */
+
+  font-size: 16px;
+  float: right;
+  cursor: pointer;
+}
+.peopleManageOtherPeople {
+  width: 95%;
+  height: 110px;
+  /* padding-right: 1%; */
+}
+.manageOtherPeopleForm {
+  padding-left: 5%;
+}
+.manageOtherPeopleFormInputs {
+  width: 50%;
+  float: left;
+}
+.peopleManageOtherPeopleBtn {
+  width: 45%;
+  float: left;
+  padding-left: 5%;
+  padding-top: 4%;
+  cursor: pointer;
+  color: green;
+}
+.manageOtherPeopleFormButtons {
+  padding-top: 15px;
+}
+
+.manageOtherPeopleFormChooseIcon {
+  width: 14%;
+  float: left;
+  /* padding: 10px; */
+  padding-top: 20px;
+  margin-left: 5px;
+}
+.chooseIconImg {
+  /* margin: 5px; */
+}
+.chooseIconImg:hover {
+  margin: 2px;
+  border: 3px solid green;
+}
+.chooseIconBtn:hover {
+  cursor: pointer;
+}
+.errorMassage {
+  color: red;
+}
+
+/* section APPEARENCE */
+.settingsBodyAppearence {
+  width: 85%;
+  /* height: 370px; */
+  border: 1px solid grey;
+  margin: 0 auto;
+  margin-top: 15px;
+  padding-bottom: 0;
+}
+.appearenceThemes {
+  width: 100%;
+  /* height: 60px; */
+  border-bottom: 2px solid grey;
+  margin: 0 auto;
+  margin-top: 15px;
+  padding-left: 7%;
+  padding-bottom: 10px;
+}
+.appearenceThemes > input {
+  margin-right: 15%;
+  margin-left: 5%;
+}
+
+.appearenceAddBookmark {
+  margin: 0 auto;
+  width: 95%;
+  padding-top: 1%;
+  padding-bottom: 7%;
+  padding-left: 5%;
+}
+.appearenceInsideTitleArea {
+  margin-left: -20px;
+}
+.appearenceAddBookmarkTitle {
+  font-style: italic;
+}
+.appearenceAddBookmark span {
+  width: 100%;
+  color: green;
+  cursor: pointer;
+  float: left;
+  margin-bottom: 10px;
+}
+.appearenceAddBookmarkInput {
+  width: 50%;
+}
+.appearenceAddBookmarkBtnAdd {
+  display: block;
+  float: right;
+  padding-right: 40%;
+  font-size: 16px;
+  margin-top: 0.3%;
+}
+.appearenceAddBookmarkSwitch {
+  width: 100%;
+  padding: 7px 5% 0 5%;
+  min-height: 34px;
+  border-top: 1px solid grey;
+  margin: 0 auto;
+  padding-left: 5%;
+  vertical-align: middle;
+  padding-top: 7px;
+}
+.appearenceAddBookmarkSwitch > p {
+  display: inline-block;
+  color: black;
+}
+.appearenceAddBookmarkSwitchInput {
+  float: right;
+  margin-right: 10%;
+  margin-top: 2%;
+}
+
+.appearenceFont {
+  min-height: 34px;
+  border-top: 1px solid grey;
+  margin: 0 auto;
+  padding-left: 5%;
+  vertical-align: middle;
+  padding-top: 7px;
+  width: 100%;
+}
+.appearenceFontTitle {
+  margin-top: 1%;
+  float: left;
+}
+.appearenceSelects {
+  float: right;
+  width: 25%;
+  margin-right: 10px;
+}
+.appearenceZoom {
+  min-height: 34px;
+  border-top: 1px solid grey;
+  margin: 0 auto;
+  padding-left: 5%;
+  vertical-align: middle;
+  padding-top: 7px;
+  width: 100%;
+}
+.appearenceZoom > select {
+  margin-right: 10px;
+}
+
+/* section ADVANCED */
+
+.settingsBodyAdvanced {
+  width: 85%;
+  height: 400px;
+  border: 1px solid grey;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+
+.printing {
+  width: 85%;
+  height: 80px;
+  border: 1px solid grey;
+  margin: 0 auto;
+  margin-top: 15px;
+  color: green;
+}
+.printingBtn {
+  color: green;
+  padding: 2% 0 0 5%;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.reset {
+  width: 85%;
+  height: 150px;
+  border: 1px solid rgb(238, 8, 8);
+  margin: 0 auto;
+  margin-top: 15px;
+}
+.resetArea {
+  padding: 6% 0 0 5%;
+}
+.resetAreaBtn {
+  color: green;
+  font-size: 16px;
+  cursor: pointer;
+}
+.resetAreaDescr {
+  color: gray;
+  font-style: italic;
+}
+
+/* PRINTING */
+
+.tableToPrint {
+  align-content: center;
+}
+.tableToPrint > tbody > tr {
+  border-bottom: 1px solid black;
+}
+.tableToPrint > tbody > tr > td {
+  width: 65%;
+  padding-left: 5%;
+}
+
+@media print {
+  .menu {
+    display: none;
+  }
+  body{
+    padding: 5%;
+  }
+}
