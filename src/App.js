@@ -8,21 +8,19 @@ import { Router, Route, NavLink } from "react-router-dom";
 import createBrowserHistory from "history/createBrowserHistory";
 import PrintBookmarks from "./admin/components/PrintBookmarks";
 
+import {getDefaultValues} from "./config";
+
 const history = createBrowserHistory();
 
 class App extends Component {
+  
   componentDidMount() {
-    let options = {
-      backgroundColor: localStorage.getItem("backgroundColor") || "white",
-      fontSize: localStorage.getItem("fontSize") || "Small",
-      zoom: localStorage.getItem("zoom") | "100%"
-    };
-
-    document.body.style = `background-color:${options.backgroundColor};
-    font-size: ${options.fontSize};
-    zoom: ${options.zoom};
-    `;
+    const bodyStyle = document.body.style;
+     bodyStyle.backgroundColor = getDefaultValues.backgroundColor;
+     bodyStyle.fontSize = getDefaultValues.fontSize;
+     bodyStyle.zoom = getDefaultValues.zoom;
   }
+  
   render() {
     return (
       <div>

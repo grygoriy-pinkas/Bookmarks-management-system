@@ -5,10 +5,7 @@ import { Table } from "react-bootstrap";
 import CreateEditBookmark from "./CreateEditBookmark";
 
 import Pagination from "react-js-pagination";
-
-var PAGE_RANGE_DISPLAYED = 4;
-var ITEMS_COUNT_PER_PAGE = 10;
-var TOTAL_ITEMS_COUNT;
+import { paginationDefaults } from "../../config";
 
 class BookmarkList extends Component {
   constructor(props) {
@@ -16,13 +13,15 @@ class BookmarkList extends Component {
     this.state = {
       activePage: 1,
       createEditBookmark: false,
-      editingData: { title: null, link: null, id: null }
+      editingData: { title: null, link: null, id: null },
+      TOTAL_ITEMS_COUNT: null
     };
     this.renderList = this.renderList.bind(this);
     this.managerCreateEditForm = this.managerCreateEditForm.bind(this);
     this.cancelForm = this.cancelForm.bind(this);
     this.handleCreateBookmark = this.handleCreateBookmark.bind(this);
     this.handlePageChange = this.handlePageChange.bind(this);
+    this.calculatePagination = this.calculatePagination.bind(this);
   }
 
   managerCreateEditForm(title, link, id) {
@@ -36,48 +35,47 @@ class BookmarkList extends Component {
     });
   }
 
-  //публікація закладок з фільтром на пагінацію
+  calculatePagination(arrSearchFiltered, values) {
+    let begin, end;
+    if (this.state.activePage === 1) {
+      begin = 0;
+      end = paginationDefaults.ITEMS_COUNT_PER_PAGE;
+    } else if (arrSearchFiltered != values) {
+      begin = 0;
+      end = this.state.activePage * paginationDefaults.ITEMS_COUNT_PER_PAGE;
+    } else {
+      begin =
+        this.state.activePage * paginationDefaults.ITEMS_COUNT_PER_PAGE -
+        paginationDefaults.ITEMS_COUNT_PER_PAGE;
+      end = this.state.activePage * paginationDefaults.ITEMS_COUNT_PER_PAGE;
+    }
+
+    let arrPaginated = arrSearchFiltered.slice(begin, end);
+    const TOTAL_ITEMS_COUNT = arrSearchFiltered.length || values.length;
+    localStorage.setItem("TOTAL_ITEMS_COUNT", TOTAL_ITEMS_COUNT);
+    return arrPaginated;
+  }
+
   renderList() {
     const values = Object.values(this.props.links);
-
     //search filter
     let arrSearchFiltered;
-    if (localStorage.getItem("searchText")) {
+    let goal = localStorage.getItem("searchText");
+    if (goal) {
       arrSearchFiltered = values.filter((item, i) => {
-        if (
-          item.title
-            .toLowerCase()
-            .indexOf(localStorage.getItem("searchText").toLowerCase()) !== -1
-        ) {
+        if (item.title.toLowerCase().indexOf(goal.toLowerCase()) !== -1) {
           return true;
         } else {
           return false;
         }
-
       });
     } else {
       arrSearchFiltered = values;
     }
 
-    //pagination filter
-    let begin, end;
-    if (this.state.activePage === 1) {
-      begin = 0;
-      end = ITEMS_COUNT_PER_PAGE;
-    } else {
-      begin =
-        this.state.activePage * ITEMS_COUNT_PER_PAGE - ITEMS_COUNT_PER_PAGE;
-      end = this.state.activePage * ITEMS_COUNT_PER_PAGE;
-    }
-
-    let arrPaginated = arrSearchFiltered.slice(begin, end);
-
-    TOTAL_ITEMS_COUNT = arrSearchFiltered.length || values.length;
-
     if (this.props.links) {
-      console.log(arrPaginated);
+      return this.calculatePagination(arrSearchFiltered, values).map((item, i) => {
 
-      return arrPaginated.map((item, i) => {
         let id = "";
         for (let element in this.props.links) {
           if (this.props.links[element] === item) {
@@ -98,6 +96,7 @@ class BookmarkList extends Component {
       return {};
     }
   }
+
   handleCreateBookmark(event) {
     event.preventDefault();
     this.setState({
@@ -124,7 +123,8 @@ class BookmarkList extends Component {
         <CreateEditBookmark
           cancelForm={this.cancelForm}
           editingData={this.state.editingData}
-          label="Edit"
+          label="Save"
+          title="Edit"
           {...this.props}
         />
       );
@@ -133,6 +133,7 @@ class BookmarkList extends Component {
         <CreateEditBookmark
           cancelForm={this.cancelForm}
           label="Create"
+          title="Create"
           {...this.props}
         />
       );
@@ -149,9 +150,9 @@ class BookmarkList extends Component {
           <Container className="paginationArea">
             <Pagination
               activePage={this.state.activePage}
-              itemsCountPerPage={ITEMS_COUNT_PER_PAGE}
-              totalItemsCount={TOTAL_ITEMS_COUNT}
-              pageRangeDisplayed={PAGE_RANGE_DISPLAYED}
+              itemsCountPerPage={paginationDefaults.ITEMS_COUNT_PER_PAGE}
+              totalItemsCount={localStorage.getItem("TOTAL_ITEMS_COUNT")}
+              pageRangeDisplayed={paginationDefaults.PAGE_RANGE_DISPLAYED}
               onChange={this.handlePageChange}
             />
           </Container>

@@ -7,7 +7,7 @@ class Printers extends Component {
   render() {
     return (
       <Container>
-        <NavLink to="/print" activeclassname="selected">
+        <NavLink to="/print" activeClassName="selected">
           <p className="printingBtn"> Printers</p>
         </NavLink>
       </Container>

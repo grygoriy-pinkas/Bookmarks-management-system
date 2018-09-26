@@ -43,7 +43,7 @@ class People extends Component {
     this.getLastUsers();
   }
   getLastUsers() {
-    var rootRef = firebase.database().ref("people");
+    let rootRef = firebase.database().ref("people");
     rootRef.once("value").then(snapshot => {
       let people = Object.values(snapshot.val());
       let keys = Object.keys(snapshot.val());
@@ -55,10 +55,10 @@ class People extends Component {
     });
   }
   handleFormAddUser(event) {
-    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (!re.test(this.state.email)) {
       this.setState({
-        errorMassage: "Uncorrect email"
+        errorMassage: "Incorrect email"
       });
     } else {
       firebase

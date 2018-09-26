@@ -3,9 +3,6 @@ import smile from "../../static/smile.png";
 class PageNavigator extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      pos: 0
-    };
     this.navigator = this.navigator.bind(this);
   }
 
@@ -17,19 +14,19 @@ class PageNavigator extends Component {
   render() {
     return (
       <ul className="settingsBodyLeft_menu">
-        <li position={140} onClick={this.navigator}>
+        <li className="settingsBodyLeft_menuItem" position={140} onClick={this.navigator}>
           <img src={smile} alt="smile" /> People
         </li>
-        <li position={425} onClick={this.navigator}>
-          <img src={smile} alt="smile"/> Appearence
+        <li className="settingsBodyLeft_menuItem" position={465} onClick={this.navigator}>
+          <img src={smile} alt="smile"/> Appearance
         </li>
         <p />
         <p>Advanced</p>
         <ul>
-          <li position={890} onClick={this.navigator}>
+          <li className="settingsBodyLeft_menuItem" position={890} onClick={this.navigator}>
             <img src={smile} alt="smile"/> Printing
           </li>
-          <li position={1000} onClick={this.navigator}>
+          <li className="settingsBodyLeft_menuItem" position={1000} onClick={this.navigator}>
             <img src={smile} alt="smile"/> Reset
           </li>
         </ul>

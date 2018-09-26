@@ -4,7 +4,7 @@ import BookmarkList from "../components/BookmarkList";
 
 import Container from "muicss/lib/react/container";
 
-import services from "../../services/bookmarks";
+import bookmarkService from "../../services/bookmarks";
 
 class Bookmarks extends Component {
   constructor(props) {
@@ -20,11 +20,11 @@ class Bookmarks extends Component {
 
   componentDidMount() {
     // data for firebase
-    services.get().then(snapshot => {
+    bookmarkService.get().then(snapshot => {
       let links = snapshot.val();
       //record data in state with original keys from firebase
       this.setState({
-        links: links
+        links
       });
     });
     if (this.state.searchText === "") {
@@ -42,16 +42,15 @@ class Bookmarks extends Component {
     const rand = Math.random() * 10000;
     let links = Object.assign(this.state.links, { [rand]: value });
     this.setState({
-      links: links
+      links
     });
   }
 
   updateListAfterEdit(id, value) {
     let links = Object.assign({}, this.state.links);
-    console.log(links[id]);
     links[id] = value;
     this.setState({
-      links: links
+      links
     });
   }
 

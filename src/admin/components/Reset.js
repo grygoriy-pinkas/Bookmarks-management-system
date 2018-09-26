@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Container from "muicss/lib/react/container";
 
+import {setLocalStorageValues as defaultValues} from "../../config";
 class Reset extends Component {
   constructor(props) {
     super(props);
@@ -8,18 +9,16 @@ class Reset extends Component {
   }
 
   reset() {
-    localStorage.setItem("backgroundColor", "white");
-    localStorage.setItem("fontSize", "Small");
-    localStorage.setItem("zoom", "100%");
-    window.location.reload();
+    defaultValues();
+    this.props.reset();
   }
 
   render() {
     return (
       <Container className="resetArea">
-        <p className="resetAreaBtn" onClick={this.reset}>
+        <span className="resetAreaBtn" onClick={this.reset}>
           Reset
-        </p>
+        </span>
         <p className="resetAreaDescr">
           Restore settings to their original defaults
         </p>

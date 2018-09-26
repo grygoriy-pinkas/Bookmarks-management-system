@@ -35,9 +35,9 @@ class CreateEditBookmark extends Component {
         link: this.state.link,
         title: this.state.title
       };
-      if (this.props.label === "Edit") {
+      if (this.props.label === "Save") {
         let id = this.state.id;
-        var updates = {};
+        let updates = {};
         updates["/links/" + id] = obj;
         console.log(id);
 
@@ -82,7 +82,7 @@ class CreateEditBookmark extends Component {
     const defaultValue = this.setDefaultValue();
     return (
       <Container className="createEditBookmark">
-        <h1 className="createEditBookmarkTitle">{this.props.label}</h1>
+        <h1 className="createEditBookmarkTitle">{this.props.title}</h1>
         <form onSubmit={this.handleForm} className="createEditBookmarkForm">
           <h5 className="createEditBookmarkLabel">Bookmark title</h5>
           <FormControl

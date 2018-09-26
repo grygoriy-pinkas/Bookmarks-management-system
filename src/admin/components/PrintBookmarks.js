@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import services from "../../services/bookmarks";
+
+import bookmarkService from "../../services/bookmarks";
 
 class PrintBookmarks extends Component {
   constructor(props) {
@@ -9,7 +10,7 @@ class PrintBookmarks extends Component {
     };
   }
   componentDidMount() {
-    services.get().then(snapshot => {
+    bookmarkService.get().then(snapshot => {
       let links = snapshot.val();
       this.setState({
         links: Object.values(links)
@@ -29,7 +30,7 @@ class PrintBookmarks extends Component {
       );
     });
     if (row) {
-      setTimeout(() => window.print(), 2000);
+      setTimeout(() => window.print(), 1000);
     }
     return (
       <table className="tableToPrint">
